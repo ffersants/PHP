@@ -26,6 +26,12 @@
         */
         define('O_MAIS_LINDO', 'Fernando');
         echo (O_MAIS_LINDO);
+        echo '<br><br><br>';
+        
+        define('NUMERO1', '55');
+        define('NUMERO2', 5);
+        $soma = NUMERO1 / NUMERO2; 
+        echo "$soma";
     ?>
 </body>
 </html>
