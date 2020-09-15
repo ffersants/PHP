@@ -13,6 +13,7 @@
             array('manchete' => 'Brasil chega a 131.408 mortes por coronavírus, segundo consórcio', 'descricao' => 'País tem 4.319.184 casos confirmados. Média móvel é de 721 óbitos por dia na última semana.')
         );
         
+
         // for($i = 0; $i != count($noticias); $i++){
         //     echo "<h1>" . $noticias[$i]['manchete'] . "</h1>";
         //     echo "<p>" . $noticias[$i]['descricao'] . "</h1>";

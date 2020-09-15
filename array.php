@@ -28,7 +28,7 @@
         echo '<br>';
 
         echo $listaViagem[2];
-
+        ////////////////////////////////ARRAY ASSOCIATIVOS//////////////////////////////////
         //explicitando ao array os indexes e o valor atribuído a cada index array('index2' => 'valorDeIndex2');
         $vetorDeIndexPersonalizado = array('index1' => 'Index definido explicitamente', 'Teste', 'INDEX2' => 'meu index');
         echo '<pre>';
