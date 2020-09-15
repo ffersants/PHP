@@ -7,3 +7,6 @@ Declare três variáveis, cada uma atribuídas respectivamente aos valores: null
 Ao executar a verificação is_null(), somente a primeira variável, atribuída ao valor null, retornará true.<br>
 Agora faça a verificação empty() em todas elas e verá que todas retornarão true.<br>
 Portanto, o teste is_null() é true quando o valor é EXCLUSIVAMENTE null, <br>enquanto empty() é true quando o valor é tanto null quando vazio "" e quanto false
+<br><br>
+<h2> Método count()</h2>
+Retorna o tamanho de um array.
