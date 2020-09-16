@@ -32,12 +32,15 @@
               Login
             </div>
             <div class="card-body">
-              <form>
+            <!-- método de requisição html, se omitido, por padrão eh o get
+            // action = destino para onde aqueles valores serão submetidos -->
+            
+              <form method="post" action="form_validacao.php">
                 <div class="form-group">
-                  <input type="email" class="form-control" placeholder="E-mail">
+                  <input name="email" type="email" class="form-control" placeholder="E-mail">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" placeholder="Senha">
+                  <input name="senha" type="password" class="form-control" placeholder="Senha">
                 </div>
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
               </form>
