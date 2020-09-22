@@ -1,4 +1,8 @@
 <?php
+
+session_start();
+$_SESSION["isLoged"] = "false";
+
 $is_loged = false;
     $usuarios = array(
         array("email" => "ffersants15@gmail.com", "senha" => "12345678"),
@@ -13,9 +17,11 @@ $is_loged = false;
     }
 
     if($is_loged){
-        echo 'User logado';
+        $_SESSION["isLoged"] = "true";
+        header("Location: home.php");
     } else{
         //força redirecionamento de página
+        $_SESSION["isLoged"] = "false";
         header("Location: index.php?login=failed");
     }
     // echo "<pre>";

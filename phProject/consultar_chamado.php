@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if($_SESSION["isLoged"] = "false"){
+    header("Location: index.php?loged=false");
+  }
+?>
+
 <html>
   <head>
     <meta charset="utf-8" />

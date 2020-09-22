@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if($_SESSION["isLoged"] = "false"){
+    header("Location: index.php?loged=false");
+  }
+?>
+
 <html>
   <head>
     <meta charset="utf-8" />
@@ -59,7 +66,7 @@
 
                     <div class="row mt-5">
                       <div class="col-6">
-                        <button class="btn btn-lg btn-warning btn-block" type="submit">Voltar</button>
+                        <button onclick="voltar()" class="btn btn-lg btn-warning btn-block">Voltar</button>
                       </div>
 
                       <div class="col-6">
@@ -74,5 +81,8 @@
           </div>
         </div>
     </div>
+
+      
+
   </body>
 </html>

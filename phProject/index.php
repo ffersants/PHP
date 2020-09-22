@@ -1,3 +1,4 @@
+
 <html>
   <head>
     <meta charset="utf-8" />
@@ -12,6 +13,7 @@
         margin: 0 auto;
       }
     </style>
+
   </head>
 
   <body>
@@ -34,15 +36,33 @@
             <div class="card-body">
             <!-- método de requisição html, se omitido, por padrão eh o get
             // action = destino para onde aqueles valores serão submetidos -->
-            
               <form method="post" action="form_validacao.php">
                 <div class="form-group">
-                  <input name="email" type="email" class="form-control" placeholder="E-mail">
+                  <input autocomplete name="email" type="email" class="form-control" placeholder="E-mail">
                 </div>
                 <div class="form-group">
-                  <input name="senha" type="password" class="form-control" placeholder="Senha">
+                  <input autocomplete name="senha" type="password" class="form-control" placeholder="Senha">
                 </div>
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
+              <?php
+                if(isset($_GET["login"]) && $_GET["login"] == "failed"){
+              ?>
+
+                  <div class="is-invalid text-danger text-center">
+                      Usuário e/ou senha incorreto(s)
+                  </div>
+
+                <?php } else if(isset($_SESSION["isLoged"]) && $_GET["loged"] == "false") {
+
+                ?>
+
+                  <div class="is-invalid text-danger text-center">
+                      Favor realizar o login.
+                  </div>
+                
+                <?php } ?>
+
+                
               </form>
             </div>
           </div>
