@@ -1,9 +1,8 @@
 <?php
 
-session_start();
-$_SESSION["isLoged"] = "false";
+    session_start();
 
-$is_loged = false;
+    $autenticado = false;
     $usuarios = array(
         array("email" => "ffersants15@gmail.com", "senha" => "12345678"),
         array("email" => "felip@gmail.com", "senha" => "abc")
@@ -12,18 +11,15 @@ $is_loged = false;
 
     foreach($usuarios as $usuario){
         if($usuario["email"] == $_POST["email"] && $usuario["senha"] == $_POST["senha"]){
-            $is_loged = true;
+            $autenticado = true;
         } 
     }
 
-    if($is_loged){
-        $_SESSION["isLoged"] = "true";
+    if($autenticado){
+        $_SESSION["autenticado"] = "true";
         header("Location: home.php");
     } else{
-        //força redirecionamento de página
-        $_SESSION["isLoged"] = "false";
+        $_SESSION["autenticado"] = "false";
         header("Location: index.php?login=failed");
     }
-    // echo "<pre>";
-    // print_r($usuarios);
 ?>

@@ -52,16 +52,14 @@
                       Usuário e/ou senha incorreto(s)
                   </div>
 
-                <?php } else if(isset($_SESSION["isLoged"]) && $_GET["loged"] == "false") {
-
+                <?php } 
+                  else if(isset($_GET["logged"]) && $_GET["logged"] = "false"){  
                 ?>
-
                   <div class="is-invalid text-danger text-center">
-                      Favor realizar o login.
+                      Favor realizar o login
                   </div>
-                
                 <?php } ?>
-
+                
                 
               </form>
             </div>

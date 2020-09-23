@@ -1,7 +1,7 @@
 <?php
   session_start();
-  if($_SESSION["isLoged"] = "false"){
-    header("Location: index.php?loged=false");
+  if(!isset($_SESSION["autenticado"]) || $_SESSION["autenticado"] != "true" ){
+    header("Location: index.php?logged=false");
   }
 ?>
 
