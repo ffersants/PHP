@@ -1,8 +1,8 @@
 <?php
-  session_start();
-  if(!isset($_SESSION["autenticado"]) || $_SESSION["autenticado"] != "true" ){
-    header("Location: index.php?logged=false");
-  }
+  //require faz com que um erro fatal seja apresentado caso haja algum problema no carregamento
+  //do script incluído, impedindo a continuação de carregamento da página
+  require "verifica_sessão.php";
+  print_r($_SESSION);
 ?>
 
 <html>
@@ -28,6 +28,13 @@
         <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="./logoff.php">SAIR</a>
+        </li>
+      </ul>
+
     </nav>
 
     <div class="container">    

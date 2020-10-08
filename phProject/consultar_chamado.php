@@ -1,8 +1,23 @@
 <?php
-  session_start();
-  if(!isset($_SESSION["autenticado"]) || $_SESSION["autenticado"] != "true" ){
-    header("Location: index.php?logged=false");
+  //require faz com que um erro fatal seja apresentado caso haja algum problema no carregamento
+  //do script incluído, impedindo a continuação de carregamento da página
+  require_once "verifica_sessão.php";
+
+  $arquivo = fopen("chamado.txt", "r");
+
+  $chamados = array();
+
+  //feof procura o fim do arquivo e retorna true quando o ponteiro o encontra
+  while(!feof($arquivo)){
+    //fgets captura linha por linha do arquivo aberto
+    $linha = fgets($arquivo);
+    //array incremental que guardará uma linha em cada índice
+    $chamados[] = $linha;
+    
   }
+
+  fclose($arquivo);
+
 ?>
 
 <html>
@@ -18,6 +33,10 @@
         width: 100%;
         margin: 0 auto;
       }
+
+      a:hover{
+        text-decoration: none;
+      }
     </style>
   </head>
 
@@ -28,6 +47,11 @@
         <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="logoff.php">SAIR</a>
+        </li>
+      </ul>
     </nav>
 
     <div class="container">    
@@ -41,27 +65,40 @@
             
             <div class="card-body">
               
+            <?php
+              foreach($chamados as $chamado){
+               
+                $partesDoChamado = explode("---", $chamado);
+                
+                if(count($partesDoChamado) < 3){
+                  continue;
+                }
+
+                if($_SESSION["perfil_id"] == 2 && $_SESSION["id"] != $partesDoChamado[3]){
+                  
+                    continue;
+                
+                }
+
+                
+    
+            ?>
+
               <div class="card mb-3 bg-light">
                 <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
+                  <h5 class="card-title"><?php echo $partesDoChamado[0]?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><?php echo  $partesDoChamado[1]?></h6>
+                  <p class="card-text"><?php echo  $partesDoChamado[2]?></p>
 
                 </div>
               </div>
-
-              <div class="card mb-3 bg-light">
-                <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
-
-                </div>
-              </div>
+              <?php } ?>
 
               <div class="row mt-5">
                 <div class="col-6">
-                  <button class="btn btn-lg btn-warning btn-block" type="submit">Voltar</button>
+                
+                  <a href="home.php" class="btn btn-lg btn-warning btn-block" type="submit">Voltar</a>
+                
                 </div>
               </div>
             </div>

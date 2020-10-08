@@ -1,0 +1,3 @@
+Primeiro - Criar ambiente para cadastrar novos usuários
+Segundo - Adicionar o eventListener para a teclar enter já abrir o chamado
+Terceiro - Adicionar um sweetalert informando que o chamado foi criado 

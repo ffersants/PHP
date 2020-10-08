@@ -1,4 +1,3 @@
-
 <html>
   <head>
     <meta charset="utf-8" />
@@ -35,7 +34,7 @@
             </div>
             <div class="card-body">
             <!-- método de requisição html, se omitido, por padrão eh o get
-            // action = destino para onde aqueles valores serão submetidos -->
+            action = destino para onde aqueles valores serão submetidos -->
               <form method="post" action="form_validacao.php">
                 <div class="form-group">
                   <input autocomplete name="email" type="email" class="form-control" placeholder="E-mail">
