@@ -6,6 +6,7 @@
     $usuario_id = null;
     $usuario_perfil_id = null;
     //$perfil_id = array(1 => "Administrativo", 2 => "Usuário");
+    
     $usuarios = array(
         array("id" => 11, "email" => "admin@gmail.com", "senha" => "12345678", "perfil_id" => 1),
         array("id" => 22, "email" => "joao@gmail.com", "senha" => "12345678", "perfil_id" => 2),

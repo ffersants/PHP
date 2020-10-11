@@ -22,8 +22,9 @@
         <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
-
-      <button id="sign-up" class="ml-auto btn btn-warning">Cadastrar-se</button>
+      <a href="index.php">
+        <button class="ml-auto btn btn-warning">Entrar</button>
+      </a>
     </nav>
 
     <div class="container">    
@@ -32,46 +33,26 @@
         <div class="card-login">
           <div class="card">
             <div class="card-header">
-              Login
+              Cadastrar-se
             </div>
             <div class="card-body">
             <!-- método de requisição html, se omitido, por padrão eh o get
             action = destino para onde aqueles valores serão submetidos -->
-              <form method="post" action="form_validacao.php">
+              <form method="post" action="cadastra.php">
+                
                 <div class="form-group">
                   <input autocomplete name="email" type="email" class="form-control" placeholder="E-mail">
                 </div>
                 <div class="form-group">
                   <input autocomplete name="senha" type="password" class="form-control" placeholder="Senha">
                 </div>
-                <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
-              <?php
-                if(isset($_GET["login"]) && $_GET["login"] == "failed"){
-              ?>
-
-                  <div class="is-invalid text-danger text-center">
-                      Usuário e/ou senha incorreto(s)
-                  </div>
-
-                <?php } 
-                  else if(isset($_GET["logged"]) && $_GET["logged"] = "false"){  
-                ?>
-                  <div class="is-invalid text-danger text-center">
-                      Favor realizar o login
-                  </div>
-                <?php } ?>
-                
+                <button class="btn btn-lg btn-info btn-block" type="submit">Cadastrar</button>                
                 
               </form>
             </div>
           </div>
         </div>
     </div>
-    <script>
-        signUp = document.getElementById("sign-up");
-        signUp.addEventListener("click", () => {
-          window.location.assign("sign_up.php")
-        })
-    </script>
+ 
   </body>
 </html>
