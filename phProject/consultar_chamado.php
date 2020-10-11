@@ -67,7 +67,10 @@
               
             <?php
               foreach($chamados as $chamado){
-               
+                if($chamados[0] == ""){
+                  echo '<h4>Ops! Tudo vazio por aqui...</h4>';
+                }
+
                 $partesDoChamado = explode("---", $chamado);
                 
                 if(count($partesDoChamado) < 3){

@@ -22,6 +22,7 @@
         text-decoration: none;
       }
     </style>
+    
   </head>
 
   <body>
@@ -50,15 +51,15 @@
               <div class="row">
                 <div class="col">
                   
-                  <form action="registra_chamado.php" method="post">
+                  <form action="registra_chamado.php" method="post" id="ma-form">
                     <div class="form-group">
                       <label>Título</label>
-                      <input required name="titulo" type="text" class="form-control" placeholder="Título">
+                      <input name="titulo" type="text" class="form-control" placeholder="Título">
                     </div>
                     
                     <div class="form-group">
                       <label>Categoria</label>
-                      <select required name="categoria" class="form-control">
+                      <select name="categoria" class="form-control">
                         <option>Criação Usuário</option>
                         <option>Impressora</option>
                         <option>Hardware</option>
@@ -69,7 +70,7 @@
                     
                     <div class="form-group">
                       <label>Descrição</label>
-                      <textarea required name="descricao" class="form-control" rows="3"></textarea>
+                      <textarea name="descricao" class="form-control" rows="3"></textarea>
                     </div>
 
                     <div class="row mt-5">
@@ -91,5 +92,7 @@
           </div>
         </div>
     </div>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="./open_tckt_script.js"></script>
   </body>
 </html>
