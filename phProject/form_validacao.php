@@ -5,17 +5,8 @@
     $autenticado = false;
     $usuario_id = null;
     $usuario_perfil_id = null;
-    //$perfil_id = array(1 => "Administrativo", 2 => "Usuário");
-    
-    $usuarios = array(
-        array("id" => 11, "email" => "admin@gmail.com", "senha" => "12345678", "perfil_id" => 1),
-        array("id" => 22, "email" => "joao@gmail.com", "senha" => "12345678", "perfil_id" => 2),
-        array("id" => 33, "email" => "maria@gmail.com", "senha" => "12345678", "perfil_id" => 2)
-    );
 
-    
-
-    foreach($usuarios as $usuario){
+    foreach($_SESSION["usuarios"] as $usuario){
         if($usuario["email"] == $_POST["email"] && $usuario["senha"] == $_POST["senha"]){
             $autenticado = true;
             $user_id = $usuario["id"];
