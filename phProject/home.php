@@ -66,9 +66,14 @@
         <?php 
           if($_SESSION["user_email"] == "admin@gmail.com"){
         ?>
-          <a class="ml-auto mr-auto mt-3 mb-5" href="remover_usuarios.php">
+        <div class="text-center mr-auto ml-auto">
+          <a class=" d-block ml-auto mr-auto mt-3 mb-2" href="remover_usuarios.php">
               <button class="btn btn-danger">Remover usuários</button>
           </a>
+          <a class=" d-block ml-auto mr-auto mt-3 mb-5" href="limpar_chamados.php">
+              <button class="btn btn-danger">Remover chamados abertos</button>
+          </a>
+        </div>  
         <?php } ?>
     </div>
   </body>

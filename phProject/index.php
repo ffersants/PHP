@@ -13,9 +13,6 @@
   }
   
   //unset($_SESSION["usuarios"]);
-  echo 'Lista de usuarios<pre>';
-    print_r($_SESSION["usuarios"]);
-  echo '</pre>';
 ?>
 
 <html>
@@ -69,19 +66,25 @@
                 if(isset($_GET["login"]) && $_GET["login"] == "failed"){
               ?>
 
-                  <div class="is-invalid text-danger text-center">
+                  <div class="is-invalid text-danger text-center mt-2">
                       Usuário e/ou senha incorreto(s)
                   </div>
 
                 <?php } 
                   else if(isset($_GET["logged"]) && $_GET["logged"] = "false"){  
                 ?>
-                  <div class="is-invalid text-danger text-center">
+                  <div class="is-invalid text-danger text-center mt-2">
                       Favor realizar o login
                   </div>
+                <?php } else if(isset($_GET["users"]) && $_GET["users"] = "cleaned"){?>
+                  <div class="is-invalid text-danger text-center mt-2">
+                    Usuários removidos <br> Favor logar com a conta de administrador
+                  </div>
+                <?php } else if(isset($_GET["signup"]) && $_GET["signup"] = "success"){?>
+                  <div class="is-valid text-success text-center mt-2">
+                    Usuário cadastrado <br> Favor logar com as credenciais informadas anteriormente
+                  </div>
                 <?php } ?>
-                
-                
               </form>
             </div>
           </div>
