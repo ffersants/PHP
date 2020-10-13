@@ -2,9 +2,6 @@
   //require faz com que um erro fatal seja apresentado caso haja algum problema no carregamento
   //do script incluído, impedindo a continuação de carregamento da página
   require "verifica_sessão.php";
-  echo '<pre>';
-    print_r($_SESSION["user_email"]);
-  echo '</pre>';
 ?>
 
 <html>

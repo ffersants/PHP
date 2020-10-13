@@ -15,9 +15,7 @@
     $chamados[] = $linha;
     
   }
-
   fclose($arquivo);
-
 ?>
 
 <html>
@@ -72,18 +70,19 @@
                 }
 
                 $partesDoChamado = explode("---", $chamado);
+                
                 // echo "<pre>";
                 // print_r($partesDoChamado);
-
-                // print_r($_SESSION["usuarios"]);
+                // print_r($_SESSION["id"]);
+                // //print_r($_SESSION["usuarios"]);
                 // echo "</pre>";
                 if(count($partesDoChamado) < 3){
                   continue;
                 }
-
+                
                 if($_SESSION["perfil_id"] == 2){
-                  if($_SESSION["id"] !== $partesDoChamado[3]){
-                    continue;
+                  if($_SESSION["id"] != $partesDoChamado[3]){
+                      continue;
                   }                
                 }
 
@@ -99,7 +98,8 @@
 
                 </div>
               </div>
-              <?php } ?>
+              <?php } ?> 
+              
 
               <div class="row mt-5">
                 <div class="col-6">
