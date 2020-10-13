@@ -3,7 +3,7 @@
   //do script incluído, impedindo a continuação de carregamento da página
   require "verifica_sessão.php";
   echo '<pre>';
-    print_r($_SESSION["usuarios"]);
+    print_r($_SESSION["user_email"]);
   echo '</pre>';
 ?>
 
@@ -63,6 +63,13 @@
             </div>
           </div>
         </div>
+        <?php 
+          if($_SESSION["user_email"] == "admin@gmail.com"){
+        ?>
+          <a class="ml-auto mr-auto mt-3 mb-5" href="remover_usuarios.php">
+              <button class="btn btn-danger">Remover usuários</button>
+          </a>
+        <?php } ?>
     </div>
   </body>
 </html>

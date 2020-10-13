@@ -72,15 +72,19 @@
                 }
 
                 $partesDoChamado = explode("---", $chamado);
-                
+                // echo "<pre>";
+                // print_r($partesDoChamado);
+
+                // print_r($_SESSION["usuarios"]);
+                // echo "</pre>";
                 if(count($partesDoChamado) < 3){
                   continue;
                 }
 
-                if($_SESSION["perfil_id"] == 2 && $_SESSION["id"] != $partesDoChamado[3]){
-                  
+                if($_SESSION["perfil_id"] == 2){
+                  if($_SESSION["id"] !== $partesDoChamado[3]){
                     continue;
-                
+                  }                
                 }
 
                 
