@@ -15,7 +15,7 @@
         public function seti($atr, $value){
             $this->setValues($atr, $value);
         }
-        
+    //um método protegido é heardado, no entanto ele também necessita de uma interface na classe filha         
         function __get($pegaAtributo){
             return $this->$pegaAtributo;
         }
@@ -26,4 +26,7 @@
     $celta->seti("cor", "verde");
 
     echo $celta->cor;
+
+    //se um método mágico __set() e/ou __get()foi declarado na classe pai, ele pode atuar somente na classe pai. 
+    //Enquanto se ele for declarado na classe filha, ele atuará somente na calsse filha
 ?>

@@ -23,7 +23,7 @@
     echo '<hr>';
     class Gato{
         protected $corDoGato = NULL;
-        protected $nomeDoGato = NULL;
+        private $nomeDoGato = NULL;
         //esses métodos são executados sem ser explicitamente chamados
         function __set($atributoDoGato, $valorDoAtributoDoGato){
             $this->$atributoDoGato = $valorDoAtributoDoGato;
@@ -36,7 +36,13 @@
 
     $miau = new Gato();
     //tais chamadas de atributos, que antes apresentariam erros, agora funcionam em razão dos métodos __get() e __set()
-    //que são executados por debaixo dos panos
+    //que são executados por debaixo dos panos. Portanto, eu posso acessar métodos privados e alterar seus valores. 
     $miau->corDoGato = 'preto';
-    echo $miau->corDoGato;
+    echo $miau->corDoGato . "<br>";
+    
+    $miau->nomeDoGato = "Tunico";
+    echo $miau->nomeDoGato;
+    echo "<pre>";
+        print_r($miau);
+    echo "</pre>";
 ?>
