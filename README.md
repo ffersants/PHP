@@ -76,3 +76,38 @@ O método construtor se chama construct(). Ele é executado assim que o objeto �
     
     $fernando->printAll();
 ```
+
+<h1> Métodos e atributos estáticos</h1>
+Propriedades estáticas de uma classe podem ser acessadas diretamente, sem a necessidade de instaciação da classe 
+
+```java
+<?php
+  class MyClass{
+    public static $attr = "It's a static attribute!";
+    
+    public static function func(){
+      echo "It's a static function!";
+    }
+    
+    public function func2(){
+      echo "It ISN'T a static function!";
+    } 
+    
+  }
+  
+  //acessando propriedades da classe sem instanciá-la
+  echo MyClass::$attr . "<br>";
+  MyClass::func();
+?>
+```
+Métodos não estáticos também podem ser acessados da mesma maneira que um método estático... No entanto, não é uma boa prática.
+```java
+<?php
+  MyClass::func2();
+?>
+```
+Vale ressaltar que o "operador de membro" (->) não pode ser usado no acesso às propriedades estáticas. <br>
+
+E vale também lembrar que o operador $this não pode ser utilizado em métodos estáticos, uma vez que ele procura o escopo do objeto instanciado (atribuído a variável), para resgatar dali o valor do atributo que é passado logo em seguida, enquanto a ideia do método estático é justamente o contrário, pois recupera valores de atributos da classe sem ter a classe instanciada em um contexto de atribuição a variável. 
+<br>
+Caso o operador $this.attr seja utilizado em algum método, este método só pode ser chamado uma vez que a classe já tenha sido instanciada e atribuída a uma variável que será utilizada como chave.
