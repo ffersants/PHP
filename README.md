@@ -111,3 +111,36 @@ Vale ressaltar que o "operador de membro" (->) não pode ser usado no acesso às
 E vale também lembrar que o operador $this não pode ser utilizado em métodos estáticos, uma vez que ele procura o escopo do objeto instanciado (atribuído a variável), para resgatar dali o valor do atributo que é passado logo em seguida, enquanto a ideia do método estático é justamente o contrário, pois recupera valores de atributos da classe sem ter a classe instanciada em um contexto de atribuição a variável. 
 <br>
 Caso o operador $this.attr seja utilizado em algum método, este método só pode ser chamado uma vez que a classe já tenha sido instanciada e atribuída a uma variável que será utilizada como chave.
+
+<h1>Interfaces</h1>
+Uma interface declara os métodos que devem obrigatoriamente ser sobrescritos nos objetos que implementam a interface. Ela exige que cada classe que a implanta, determine o comportamento dos métodos declarados em seu escopo, sobrescrevendo tais métodos.
+ ```java
+    interface CalculaNota{
+        //como estes métodos serão sobrescritos, não deve-se criar o corpo da função e nem seu escopo, abrindo e fechando chaves
+        public function pegaNota();
+        public function pegaTurma();
+    }
+
+    class Aluno implements CalculaNota{
+        public $nome;
+        public $serie;
+        public $nota = 10;        
+        function __construct($nome, $serie){
+            $this->nome = $nome;
+            $this->serie = $serie;
+        }
+        //sobrescrevendo métodos
+        public function pegaNota(){
+            return $this->nota; 
+        }
+
+        public function pegaTurma(){
+            return $this->serie;
+        }
+    }
+
+    $fernando = new Aluno("fernando", "3A");
+
+    print_r($fernando->pegaNota());
+?>
+ ```
