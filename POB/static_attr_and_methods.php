@@ -6,7 +6,7 @@
         
         public static $attr1 = "it's a STATIC attribute";
         public $attr2 = "it ISN'T a static attribute";
-        
+        public $a = "fasjdfiojasdio´fjasdf"; 
         public static function first(){
             //métodos estáticos não podem usar o operador $this
             echo "it's a STATIC METHOD";
@@ -28,5 +28,4 @@
     //MAS métodos não estáticos também podem ser acessados da mesma maneira que os estáticos
     //porém, fazer isso não é recomendado
     Objeto::second();
-
 ?>
