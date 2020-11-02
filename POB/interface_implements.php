@@ -4,6 +4,7 @@
 
     interface CalculaNota{
         //como estes métodos serão sobrescritos, não deve-se criar o corpo da função e nem seu escopo, abrindo e fechando chaves
+        //eles também DEVEM ser PÚBLICOS
         public function pegaNota();
         public function pegaTurma();
     }
@@ -12,6 +13,7 @@
         public $nome;
         public $serie;
         public $nota = 10;        
+        
         function __construct($nome, $serie){
             $this->nome = $nome;
             $this->serie = $serie;
@@ -28,5 +30,5 @@
 
     $fernando = new Aluno("fernando", "3A");
 
-    print_r($fernando->pegaNota());
+    print_r($fernando->pegaTurma());
 ?>
