@@ -200,3 +200,5 @@ echo $fernando->nota; // NOTA IGUAL A 3
 ?>
 ```
 Esse procedimento também pode ser feito com interfaces, veja a captura abaixo:
+<br>
+![](POB/namespace_implements_invertidos.png)
