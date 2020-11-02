@@ -148,3 +148,55 @@ Uma interface declara os métodos que devem obrigatoriamente ser sobrescritos no
 ?>
 ```
  <h1> Namespace </h1>
+ 
+ Algumas vezes, ao importar bibliotecas para o código, podemos enfrentar problemas de funções,
+classes e iterfaces com nomes iguais, criando assim, chaves duplicadas que resultam em erros.
+<br>
+No entanto, para não ter que renomear cada chave duplicada, podemos usar namespaces, que criam
+escopos específicos que isolam um objeto e previne ele de entrar em conflito com outro objeto
+que contém o mesmo nome.
+
+```php
+<?php
+namespace my_code;
+class Aluno{
+    public $nota = 3;
+    function reprovar(){
+        echo 'reprovado';
+    }
+    function __constructor($name){
+        $this->name = $name;
+    }
+}
+//aqui foram dividos dois escopos, onde impede o conflito no nome das classes
+namespace my_other_code;
+class Aluno{
+    public $nota = 9;
+    function aprovar(){
+        echo 'aprovado';
+    }
+    function __constructor($name){
+        $this->name = $name;
+    }
+}
+?>
+```
+Se instanciarmos Aluno em uma variável $fernando... Este aluno terá qual nota? 
+```php
+<?php
+$fernando = new Aluno('Fernando');
+echo $fernando->nota; // NOTA IGUAL A 9
+?>
+```
+Ao analisarmos o código, veremos que a instância foi realizada dentro do escopo do namespace <strong>my_other_code</strong>, que possui a variável $nota atribuída ao valor 9... 
+<br>
+Mas e se quiséssemos instanciar com base na class Aluno no namespace <strong>my_code</strong>? 
+<br>
+Neste caso é necessário especificar o path, seguindo o modelo <strong> new \namespace_path\ClassName()</strong>;
+```php
+<?php
+$fernando = new \my_code\Aluno('Fernando');
+echo $fernando->nota; // NOTA IGUAL A 3
+?>
+```
+Esse procedimento também pode ser feito com interfaces, veja a captura abaixo:
