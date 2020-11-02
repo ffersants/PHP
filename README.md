@@ -113,8 +113,10 @@ E vale também lembrar que o operador $this não pode ser utilizado em métodos 
 Caso o operador $this.attr seja utilizado em algum método, este método só pode ser chamado uma vez que a classe já tenha sido instanciada e atribuída a uma variável que será utilizada como chave.
 
 <h1>Interfaces</h1>
-Uma interface declara os métodos que devem obrigatoriamente ser sobrescritos nos objetos que implementam a interface. Ela exige que cada classe que a implanta, determine o comportamento dos métodos declarados em seu escopo, sobrescrevendo tais métodos
- ```java
+
+Uma interface declara os métodos que devem obrigatoriamente ser sobrescritos nos objetos que implementam a interface. Ela exige que cada classe que a implanta, determine o comportamento dos métodos declarados em seu escopo, sobrescrevendo tais métodos.
+<br>
+```php
  <?php
     interface CalculaNota{
         //como estes métodos serão sobrescritos, não deve-se criar o corpo da função e nem seu escopo, abrindo e fechando chaves
@@ -144,4 +146,5 @@ Uma interface declara os métodos que devem obrigatoriamente ser sobrescritos no
 
     print_r($fernando->pegaNota());
 ?>
- ```
+```
+ <h1> Namespace </h1>
