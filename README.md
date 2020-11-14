@@ -204,14 +204,17 @@ Esse procedimento também pode ser feito com interfaces, veja a captura abaixo:
 ![](POB/namespace_implements_invertidos.png)
 
 <h1>Namespace: use | as </h1>
-```php
+<br>
+```java
 <?php
-    /*
+   
+    require './bibliotecas/lib1/lib1.php';//aqui há o namespace A
+    require './bibliotecas/lib2/lib2.php';//aqui há o namespace B
+    
+     /*
     REQUIRE will produce a fatal error (E_COMPILE_ERROR) and stop the script
     INCLUDE will only produce a warning (E_WARNING) and the script will continue
     */
-    require './bibliotecas/lib1/lib1.php';//aqui há o namespace A
-    require './bibliotecas/lib2/lib2.php';//aqui há o namespace B
     
     //use Cliente do escopo de namespace A, que está presente em lib1.php
     use A\Cliente;
