@@ -206,9 +206,6 @@ Esse procedimento também pode ser feito com interfaces, veja a captura abaixo:
 <h1>Namespace: use | as </h1>
 <br>
 <pre>
-```php
-
-  <?php
      /*
       REQUIRE will produce a fatal error (E_COMPILE_ERROR) and stop the script
       INCLUDE will only produce a warning (E_WARNING) and the script will continue
@@ -227,6 +224,5 @@ Esse procedimento também pode ser feito com interfaces, veja a captura abaixo:
       //agora instancia-se com ClienteNsB, pois esta é uma classe idêntia à Cliente
       $b = new ClienteNsB();
       echo $b->nome;//$nome = 'Jamilton';
-  ?>
-```
-</pre>0
+</pre>
+
